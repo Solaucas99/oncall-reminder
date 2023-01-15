@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.0",
+  "name": "OnCall Reminder",
+  "description": "Cognizant",
+  "author": "Lucas",
+  "action": {
+    "default_title": "OnCall Reminder",
+    "default_popup": "index.html",
+   "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+   "128": "icon128.png"
+ },
+ "permissions": [
+  "notifications",
+  "scripting",
+  "alarms",
+  "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+ "background": {
+  "service_worker": "background.js"
+ },
+ "content_scripts": [{
+   "matches": ["http://*/*", "https://*/*"],
+   "js": ["myScript.js"]
+ }]
+}
